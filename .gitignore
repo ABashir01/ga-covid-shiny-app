@@ -1,0 +1,6 @@
+.Rhistory
+.RData
+.Ruserdata
+*.log
+.r-lib/
+.renv-cache/
