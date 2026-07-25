@@ -24,6 +24,9 @@ jobs:
         with:
           r-version: "4.5.1"
 
+      - name: Smoke check live source adapters
+        run: Rscript scripts/smoke_refresh_sources.R
+
       - name: Refresh latest Georgia forecast artifacts
         run: Rscript scripts/refresh_latest_georgia_forecast.R
 

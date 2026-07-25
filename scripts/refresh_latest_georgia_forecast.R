@@ -7,6 +7,12 @@ result <- refresh_georgia_live_forecast(use_remote = use_remote, save_output = T
 
 latest <- result$latest
 cat(sprintf("Data source: %s\n", result$source))
+cat(sprintf(
+  "Rows: hospitalization=%s, wastewater=%s, joined=%s\n",
+  result$diagnostics$hospitalization$rows,
+  result$diagnostics$wastewater$rows,
+  result$diagnostics$joined$rows
+))
 cat(sprintf("Latest observed input week: %s\n", result$latest_observed_week))
 cat(sprintf("Latest forecast target week: %s\n", as.character(latest$target_week[1])))
 cat(sprintf("Latest predicted rate: %.4f\n", as.numeric(latest$predicted_rate[1])))
